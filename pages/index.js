@@ -1,6 +1,8 @@
+import React from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 
-export default function Index() {
+export default function Index () {
   return (
     <div>
       <Head>
@@ -9,10 +11,12 @@ export default function Index() {
       </Head>
 
       <main>
+        <Link href="/profile">โปรไฟล์</Link>
+        <Link href="/withdraw">ถอนเงินสด</Link>
+        <Link href="/deposit">ฝากเข้าบัญชี</Link>
       </main>
 
-      <footer>
-      </footer>
+      <footer></footer>
     </div>
   )
 }
