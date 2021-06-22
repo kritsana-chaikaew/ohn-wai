@@ -5,10 +5,12 @@ export default function Profile () {
   const [profile, setProfile] = useState({})
 
   useEffect(async () => {
-    const liff = (await import('@line/liff')).default
-    await liff.ready
-    const profile = await liff.getProfile()
-    setProfile(profile)
+    if (process.env.NODE_ENV === 'production') {
+      const liff = (await import('@line/liff')).default
+      await liff.ready
+      const profile = await liff.getProfile()
+      setProfile(profile)
+    }
   }, [profile.userId])
 
   return (
